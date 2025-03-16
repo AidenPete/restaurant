@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Delights - Seafood Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/7efea5db52.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-blue-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6 px-6 flex justify-between items-center">
+        <h1 class="text-4xl font-bold">Ocean Delights</h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                <li><a href="menu.html" class="hover:text-yellow-300">Menu</a></li>
+                <li><a href="about.html" class="hover:text-yellow-300">About Us</a></li>
+                <li><a href="contact.html" class="hover:text-yellow-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="text-center py-12 px-4 relative">
+        <h2 class="text-3xl font-bold text-blue-900 z-10 relative">Welcome to Ocean Delights</h2>
+        <p class="text-lg text-gray-700 mt-4 z-10 relative">Indulge in the freshest seafood with a view of the ocean.</p>
+        <div class="relative mt-6">
+            <img src="assets/pexels-nadin-sh-78971847-12173348.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-10" id="image1">
+            <img src="assets/pexels-nadin-sh-78971847-26756783.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-20" id="image2">
+            <img src="assets/pexels-pixabay-460537.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-30" id="image3">
+            <img src="assets/pexels-the-castlebar-3902897-31148863.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-40" id="image4">
+        </div>
+    </section>
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('section img');
+        const totalImages = images.length;
+        function changeImage() {
+            images[currentImageIndex].classList.remove('opacity-100');
+            images[currentImageIndex].classList.add('opacity-0');
+            currentImageIndex = (currentImageIndex + 1) % totalImages;
+            images[currentImageIndex].classList.remove('opacity-0');
+            images[currentImageIndex].classList.add('opacity-100');
+        }
+
+        // Initial display of the first image
+        images[currentImageIndex].classList.add('opacity-100');
+
+        setInterval(changeImage, 3000);
+    </script>
+    
+    <!-- Reservation Form -->
+    <section class="py-12 px-4 bg-white text-center">
+        <h2 class="text-3xl font-bold text-blue-900">Reserve a Table</h2>
+        <form class="mt-6 max-w-md mx-auto">
+            <input type="text" placeholder="Your Name" class="block w-full p-2 border border-gray-300 rounded-md mb-4">
+            <input type="email" placeholder="Your Email" class="block w-full p-2 border border-gray-300 rounded-md mb-4">
+            <input type="date" class="block w-full p-2 border border-gray-300 rounded-md mb-4">
+            <button class="bg-blue-800 text-white px-4 py-2 rounded-md">Book Now</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center py-4">
+        <p>&copy; 2025 Ocean Delights. All rights reserved.</p>
+        <p>Follow us on social media:</p>
+        <div class="flex justify-center space-x-4 mt-2">
+            <a href="#" class="hover:text-yellow-300"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-yellow-300"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-yellow-300"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
