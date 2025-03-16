@@ -6,6 +6,38 @@
     <title>Ocean Delights - Seafood Restaurant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/7efea5db52.js" crossorigin="anonymous"></script>
+    <style>
+        .slider-container {
+            position: relative;
+            width: 75%;
+            height: 24rem;
+            overflow: hidden;
+            margin: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slide 20s infinite ease-in-out;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0%, 20% { transform: translateX(0%); }
+            25%, 45% { transform: translateX(-100%); }
+            50%, 70% { transform: translateX(-200%); }
+            75%, 95% { transform: translateX(-300%); }
+            100% { transform: translateX(0%); }
+        }
+    </style>
 </head>
 <body class="bg-blue-50 font-sans">
     <!-- Header -->
@@ -15,41 +47,26 @@
             <ul class="flex space-x-6">
                 <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
                 <li><a href="menu.html" class="hover:text-yellow-300">Menu</a></li>
-                <li><a href="about.html" class="hover:text-yellow-300">About Us</a></li>
-                <li><a href="contact.html" class="hover:text-yellow-300">Contact</a></li>
+                <li><a href="#about.html" class="hover:text-yellow-300">About Us</a></li>
+                <li><a href="#contact.html" class="hover:text-yellow-300">Contact</a></li>
             </ul>
         </nav>
     </header>
     
     <!-- Hero Section -->
-    <section class="text-center py-12 px-4 relative">
-        <h2 class="text-3xl font-bold text-blue-900 z-10 relative">Welcome to Ocean Delights</h2>
-        <p class="text-lg text-gray-700 mt-4 z-10 relative">Indulge in the freshest seafood with a view of the ocean.</p>
-        <div class="relative mt-6">
-            <img src="assets/pexels-nadin-sh-78971847-12173348.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-10" id="image1">
-            <img src="assets/pexels-nadin-sh-78971847-26756783.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-20" id="image2">
-            <img src="assets/pexels-pixabay-460537.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-30" id="image3">
-            <img src="assets/pexels-the-castlebar-3902897-31148863.jpg" alt="Ocean Delights Restaurant" class="mx-auto rounded-lg shadow-md w-3/4 absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 opacity-0 z-40" id="image4">
+    <section class="text-center py-12 px-4">
+        <h2 class="text-3xl font-bold text-blue-900">Welcome to Ocean Delights</h2>
+        <p class="text-lg text-gray-700 mt-4">Indulge in the freshest seafood with a view of the ocean.</p>
+        <div class="slider-container w-full h-screen">
+            <div class="slider">
+                <img src="assets/pexels-nadin-sh-78971847-12173348.jpg">
+                <img src="assets/pexels-nadin-sh-78971847-26756783.jpg">
+                <img src="assets/pexels-pixabay-460537.jpg">
+                <img src="assets/pexels-the-castlebar-3902897-31148863.jpg">
+            </div>
         </div>
     </section>
-    <script>
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll('section img');
-        const totalImages = images.length;
-        function changeImage() {
-            images[currentImageIndex].classList.remove('opacity-100');
-            images[currentImageIndex].classList.add('opacity-0');
-            currentImageIndex = (currentImageIndex + 1) % totalImages;
-            images[currentImageIndex].classList.remove('opacity-0');
-            images[currentImageIndex].classList.add('opacity-100');
-        }
 
-        // Initial display of the first image
-        images[currentImageIndex].classList.add('opacity-100');
-
-        setInterval(changeImage, 3000);
-    </script>
-    
     <!-- Reservation Form -->
     <section class="py-12 px-4 bg-white text-center">
         <h2 class="text-3xl font-bold text-blue-900">Reserve a Table</h2>
