@@ -7,37 +7,41 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/7efea5db52.js" crossorigin="anonymous"></script>
     <style>
-       /* Slider css styling */
-  .slider-container {
-    position: relative;
-    width: 75%;
-    height: 24rem;
-    overflow: hidden;
-    margin: auto;
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+        .slider-container {
+            position: relative;
+            width: 75%;
+            height: 500px;
+            overflow: hidden;
+            margin: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.slider img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    animation: fade 16s infinite;
-}
+        .slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            animation: fade 16s infinite;
+        }
 
-.slider img:nth-child(1) { animation-delay: 0s; }
-.slider img:nth-child(2) { animation-delay: 4s; }
-.slider img:nth-child(3) { animation-delay: 8s; }
-.slider img:nth-child(4) { animation-delay: 12s; }
+        .slider img:nth-child(1) { animation-delay: 0s; }
+        .slider img:nth-child(2) { animation-delay: 4s; }
+        .slider img:nth-child(3) { animation-delay: 8s; }
+        .slider img:nth-child(4) { animation-delay: 12s; }
 
-@keyframes fade {
-    0%, 100% { opacity: 0; }
-    20%, 80% { opacity: 1; }
-}
+        @keyframes fade {
+            0%, 100% { opacity: 0; }
+            20%, 80% { opacity: 1; }
+        }
 
+        /* Menu item hover effect */
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="bg-blue-50 font-sans">
@@ -45,57 +49,208 @@
     <header class="bg-blue-900 text-white py-6 px-6 flex flex-col md:flex-row justify-between items-center">
         <h1 class="text-4xl font-bold mb-4 md:mb-0">Ocean Delights</h1>
         <nav>
-            <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6"></ul>
+            <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
                 <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
-                <li><a href="menu.html" class="hover:text-yellow-300">Menu</a></li>
-                <li><a href="#about.html" class="hover:text-yellow-300">About Us</a></li>
-                <li><a href="#contact.html" class="hover:text-yellow-300">Contact</a></li>
+                <li><a href="#menu" class="hover:text-yellow-300 font-bold">Menu</a></li>
+                <li><a href="about.html" class="hover:text-yellow-300">About Us</a></li>
+                <li><a href="contact.html" class="hover:text-yellow-300">Contact</a></li>
             </ul>
         </nav>
     </header>
     
     <!-- Hero Section -->
     <section class="relative text-center py-12 px-4">
-    <!-- Fixed Overlay Container -->
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-6 z-10">
-        <h2 class="text-4xl font-bold bg-black bg-opacity-50 px-4 py-2 rounded-lg">Welcome to Ocean Delights</h2>
-        <p class="text-lg mt-4 bg-black bg-opacity-50 px-4 py-2 rounded-lg">
-            Indulge in the freshest seafood with a view of the ocean.
-        </p>
-    </div>
-
-    <!-- Image Slider -->
-    <div class="slider-container w-full h-[500px] relative overflow-hidden">
-        <div class="slider flex w-full h-full">
-            <img class="w-full h-full object-cover" src="assets/pexels-nadin-sh-78971847-12173348.jpg">
-            <img class="w-full h-full object-cover" src="assets/pexels-nadin-sh-78971847-26756783.jpg">
-            <img class="w-full h-full object-cover" src="assets/pexels-pixabay-460537.jpg">
-            <img class="w-full h-full object-cover" src="assets/pexels-the-castlebar-3902897-31148863.jpg">
+        <!-- Fixed Overlay Container -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-6 z-10">
+            <h2 class="text-4xl font-bold bg-black bg-opacity-50 px-4 py-2 rounded-lg">Welcome to Ocean Delights</h2>
+            <p class="text-lg mt-4 bg-black bg-opacity-50 px-4 py-2 rounded-lg">
+                Indulge in the freshest seafood with a view of the ocean.
+            </p>
         </div>
-    </div>
-</section>
 
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider">
+                <img src="assets/pexels-nadin-sh-78971847-12173348.jpg" alt="Seafood dish">
+                <img src="assets/pexels-nadin-sh-78971847-26756783.jpg" alt="Restaurant interior">
+                <img src="assets/pexels-pixabay-460537.jpg" alt="Ocean view">
+                <img src="assets/pexels-the-castlebar-3902897-31148863.jpg" alt="Chef preparing food">
+            </div>
+        </div>
+    </section>
 
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">Our Menu</h2>
+            
+            <!-- Appetizers -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-semibold text-blue-800 border-b-2 border-blue-200 pb-2 mb-8">Appetizers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Crispy Calamari</h4>
+                            <span class="text-lg font-semibold text-blue-700">$12</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Lightly fried squid served with lemon aioli and marinara sauce</p>
+                        <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">Chef's Recommendation</span>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Oysters Rockefeller</h4>
+                            <span class="text-lg font-semibold text-blue-700">$16</span>
+                        </div>
+                        <p class="text-gray-600">Fresh oysters topped with spinach, bacon, and hollandaise sauce</p>
+                    </div>
+                    
+                    <!-- Menu Item 3 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Shrimp Cocktail</h4>
+                            <span class="text-lg font-semibold text-blue-700">$14</span>
+                        </div>
+                        <p class="text-gray-600">Chilled jumbo shrimp with house-made cocktail sauce</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Courses -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-semibold text-blue-800 border-b-2 border-blue-200 pb-2 mb-8">Main Courses</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Grilled Atlantic Salmon</h4>
+                            <span class="text-lg font-semibold text-blue-700">$28</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Served with roasted vegetables and lemon-dill sauce</p>
+                        <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">Gluten Free</span>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Lobster Thermidor</h4>
+                            <span class="text-lg font-semibold text-blue-700">$42</span>
+                        </div>
+                        <p class="text-gray-600">Maine lobster baked with creamy mushroom sauce and gruyère cheese</p>
+                    </div>
+                    
+                    <!-- Menu Item 3 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Seafood Paella</h4>
+                            <span class="text-lg font-semibold text-blue-700">$32</span>
+                        </div>
+                        <p class="text-gray-600">Traditional Spanish rice dish with shrimp, mussels, clams, and chorizo</p>
+                    </div>
+                    
+                    <!-- Menu Item 4 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Crab-Stuffed Flounder</h4>
+                            <span class="text-lg font-semibold text-blue-700">$34</span>
+                        </div>
+                        <p class="text-gray-600">Fresh flounder stuffed with jumbo lump crab meat, served with beurre blanc</p>
+                    </div>
+                    
+                    <!-- Menu Item 5 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Surf & Turf</h4>
+                            <span class="text-lg font-semibold text-blue-700">$48</span>
+                        </div>
+                        <p class="text-gray-600">8oz filet mignon with grilled lobster tail, served with mashed potatoes</p>
+                    </div>
+                    
+                    <!-- Menu Item 6 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Shrimp Scampi</h4>
+                            <span class="text-lg font-semibold text-blue-700">$26</span>
+                        </div>
+                        <p class="text-gray-600">Jumbo shrimp sautéed in garlic butter sauce over linguine</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desserts -->
+            <div>
+                <h3 class="text-3xl font-semibold text-blue-800 border-b-2 border-blue-200 pb-2 mb-8">Desserts</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Key Lime Pie</h4>
+                            <span class="text-lg font-semibold text-blue-700">$9</span>
+                        </div>
+                        <p class="text-gray-600">Tart key lime custard in a graham cracker crust with whipped cream</p>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Chocolate Lava Cake</h4>
+                            <span class="text-lg font-semibold text-blue-700">$10</span>
+                        </div>
+                        <p class="text-gray-600">Warm chocolate cake with a molten center, served with vanilla ice cream</p>
+                    </div>
+                    
+                    <!-- Menu Item 3 -->
+                    <div class="menu-item bg-blue-50 rounded-lg p-6 transition duration-300 hover:bg-blue-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-blue-900">Crème Brûlée</h4>
+                            <span class="text-lg font-semibold text-blue-700">$8</span>
+                        </div>
+                        <p class="text-gray-600">Classic vanilla bean custard with caramelized sugar crust</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Reservation Form -->
-    <section class="py-12 px-4 bg-white text-center">
-        <h2 class="text-3xl font-bold text-blue-900">Reserve a Table</h2>
+    <section class="py-12 px-4 bg-blue-100 text-center">
+        <h2 class="text-3xl font-bold text-blue-900 mb-6">Reserve a Table</h2>
         <form class="mt-6 max-w-md mx-auto">
-            <input type="text" placeholder="Your Name" class="block w-full p-2 border border-gray-300 rounded-md mb-4">
-            <input type="email" placeholder="Your Email" class="block w-full p-2 border border-gray-300 rounded-md mb-4">
-            <input type="date" class="block w-full p-2 border border-gray-300 rounded-md mb-4">
-            <button class="bg-blue-800 text-white px-4 py-2 rounded-md">Book Now</button>
+            <div class="mb-4">
+                <label for="name" class="block text-left mb-1">Your Name</label>
+                <input type="text" id="name" placeholder="Full Name" class="block w-full p-2 border border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-left mb-1">Your Email</label>
+                <input type="email" id="email" placeholder="Email Address" class="block w-full p-2 border border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="date" class="block text-left mb-1">Reservation Date</label>
+                <input type="date" id="date" class="block w-full p-2 border border-gray-300 rounded-md">
+            </div>
+            <button type="submit" class="bg-blue-800 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition duration-300">
+                Book Now
+            </button>
         </form>
     </section>
     
     <!-- Footer -->
-    <footer class="bg-blue-900 text-white text-center py-4">
-        <p>&copy; 2025 Ocean Delights. All rights reserved.</p>
-        <p>Follow us on social media:</p>
-        <div class="flex justify-center space-x-4 mt-2">
-            <a href="#" class="hover:text-yellow-300"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="hover:text-yellow-300"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="hover:text-yellow-300"><i class="fa-brands fa-twitter"></i></a>
+    <footer class="bg-blue-900 text-white text-center py-8">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Ocean Delights. All rights reserved.</p>
+            <p class="mt-2">Follow us on social media:</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" aria-label="Facebook" class="hover:text-yellow-300 text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram" class="hover:text-yellow-300 text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter" class="hover:text-yellow-300 text-xl"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <address class="mt-4 not-italic">
+                123 Ocean Drive, Coastal City, CC 12345<br>
+                Phone: (123) 456-7890<br>
+                Email: info@oceandelights.com
+            </address>
         </div>
     </footer>
 </body>
